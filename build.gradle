@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+
+repositories {
+    mavenCentral()
+    //maven { url "http://search.maven.org/"}
+}
+
+
+dependencies {
+    compile ('org.jdom:jdom:2.0.2')
+    testCompile ('junit:junit:4.11')
+}
