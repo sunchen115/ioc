@@ -3,5 +3,10 @@ install: true
 jdk:
   - oraclejdk8
 script:
-  - ./gradlew test
-  - echo "xx" && exit 1
+  - ./gradlew check
+  - echo $API_KEY
+deploy:
+  provider: releases
+  api_key: "$API_KEY"
+  file: "build/libs/ioc.jar"
+  skip_cleanup: true
