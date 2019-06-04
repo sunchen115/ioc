@@ -2,6 +2,17 @@ language: java
 install: true
 jdk:
   - oraclejdk8
-script:
-  - ./gradlew test
-  - echo "xx" && exit 1
+jobs:
+  include:
+    - stage: Tests
+      script: echo "`date` Unit Tests1" && sleep 1
+      name: "Unit Tests"
+    - script: echo "`date` Integration-tests" && sleep 2
+      name: "Integration Tests"
+    - stage: Package
+      script: ./gradlew build
+      deploy:
+        provider: releases
+        api_key: "$API_KEY"
+        file: "build/libs/ioc.jar"
+        skip_cleanup: true
