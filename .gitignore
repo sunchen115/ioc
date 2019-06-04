@@ -1,4 +1,6 @@
 ioc.*
 .gradle
+gradle
 out
 build
+.idea
