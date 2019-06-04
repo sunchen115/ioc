@@ -7,6 +7,9 @@ repositories {
     //maven { url "http://search.maven.org/"}
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
 
 dependencies {
     compile ('org.jdom:jdom:2.0.2')
